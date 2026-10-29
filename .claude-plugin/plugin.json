@@ -1,5 +1,5 @@
 {
   "name": "rasa-role-cleanup",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The Cleanup role (`cleanup`) as a RasaOS role module. Sweeps every session on its node that is no longer active, whoever started it. Saves their work to a branch and a PR, flags what it cannot save, then ends them so the worker list stays clean."
 }
