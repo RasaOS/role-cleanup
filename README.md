@@ -1,6 +1,6 @@
 # role-cleanup
 
-**Version:** 0.1.2 · `rasa.module.role.cleanup` · public
+**Version:** 0.1.3 · `rasa.module.role.cleanup` · public
 
 The **Cleanup** role (`cleanup`) as a RasaOS role module. Sweeps every session on its node that is no longer active, whoever started it. Saves their work to a branch and a PR, flags what it cannot save, then ends them so the worker list stays clean.
 
@@ -20,8 +20,8 @@ Role version **1**, from `roles/cleanup.md` at vsi-tenant `fd0c872`.
 
 ## Loading it
 
-- **As an agent's brain:** `galt agent new <name> --brain RasaOS/role-cleanup@v0.1.2`. galt reads `role.json` and `prompt.md`. There is no role assignment this way, so no grants.
-- **As the source of the published role:** the tenant's `roles/cleanup.md` becomes the one line `element: RasaOS/role-cleanup@v0.1.2`. After a person runs Publish roles, every agent with role `cleanup` loads this Element. galt's scheduler supports this; it advertises `role_elements` (galt ADR 0064).
+- **As an agent's brain:** `galt agent new <name> --brain RasaOS/role-cleanup@v0.1.3`. galt reads `role.json` and `prompt.md`. There is no role assignment this way, so no grants.
+- **As the source of the published role:** the tenant's `roles/cleanup.md` becomes the one line `element: RasaOS/role-cleanup@v0.1.3`. After a person runs Publish roles, every agent with role `cleanup` loads this Element. galt's scheduler supports this; it advertises `role_elements` (galt ADR 0064).
 - **Public:** any computer can fetch it. No vault token is needed.
 
 ## Changing the role
