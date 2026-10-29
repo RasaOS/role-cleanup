@@ -1,0 +1,35 @@
+{
+  "$schema": "https://rasa-os.github.io/schema/rasa.schema.v1.json",
+  "contract_version": "1.4.0",
+  "name": "rasa.module.role.cleanup",
+  "version": "0.1.0",
+  "kind": "module",
+  "aliases": [
+    "role-cleanup",
+    "rasa.role.cleanup"
+  ],
+  "description": "The Cleanup role (`cleanup`) as a RasaOS role module. Sweeps every session on its node that is no longer active, whoever started it. Saves their work to a branch and a PR, flags what it cannot save, then ends them so the worker list stays clean.",
+  "source": {
+    "repo": "https://github.com/RasaOS/role-cleanup",
+    "branch": "main"
+  },
+  "tier": "Pro",
+  "capabilities": [
+    "role.cleanup",
+    "work.sweep"
+  ],
+  "permissions": [],
+  "requires": {
+    "parent_kind": [
+      "domain",
+      "tenant"
+    ]
+  },
+  "rasa": {
+    "shape_pattern": "role",
+    "role_id": "cleanup",
+    "role_version": 1,
+    "role_source": "Vehicle-Safety-Inspections/vsi-tenant roles/cleanup.md at fd0c872",
+    "note": "PROVISIONAL (galt ADR 0064; tenant ADR 2026-10-10-roles-are-element-modules D2): canon has no kind: role yet, so a role is a module. role.json and prompt.md are what galt reads to publish the role and to load it as an agent's brain; .claude-plugin/plugin.json makes the repo loadable with --plugin-dir. The repo is role-cleanup (the ADR 0064 form, and canon's once kind: role lands), not module-role-cleanup. No permissions: the role's gate grants are in role.json and reach a session only through a role assignment a person publishes."
+  }
+}

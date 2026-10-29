@@ -1,0 +1,31 @@
+{
+  "id": "cleanup",
+  "name": "Cleanup",
+  "summary": "Sweeps every session on its node that is no longer active, whoever started it. Saves their work to a branch and a PR, flags what it cannot save, then ends them so the worker list stays clean.",
+  "version": 1,
+  "consumers": [
+    "daemon"
+  ],
+  "knowledge": [
+    "CLAUDE.md",
+    "roles/WORK.md"
+  ],
+  "takes": [
+    {
+      "kind": "sweep",
+      "requires": [],
+      "optional": [
+        "older_than",
+        "repo",
+        "dry_run"
+      ],
+      "include": "older_than defaults to 24h (operator, 2026-10-08); dry_run=yes reports what it would do and changes nothing",
+      "proof": "optional"
+    }
+  ],
+  "kinds": [],
+  "grants": [],
+  "powers": [
+    "session_end"
+  ]
+}
